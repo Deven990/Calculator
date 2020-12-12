@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="power">^</string>
+    <string name="clear">C</string>
+    <string name="string_bracket_open">(</string>
+    <string name="dot">.</string>
+    <string name="substract">-</string>
+    <string name="equals">=</string>
+    <string name="division">/</string>
+    <string name="multiply">*</string>
+    <string name="Six">6</string>
+    <string name="_2">2</string>
+    <string name="_4">4</string>
+    <string name="_3">3</string>
+    <string name="Add">+</string>
+    <string name="_5">5</string>
+    <string name="_0">0</string>
+    <string name="_7">7</string>
+    <string name="_1">1</string>
+    <string name="_9">9</string>
+    <string name="_8">8</string>
+    <string name="bracket_Close">)</string>
+    <string name="invalid_input">invalid input</string>
+    <string name="tan">tan</string>
+    <string name="cosine">cos</string>
+    <string name="sine">sin</string>
+    <string name="pi">π</string>
+    <string name="del">del</string>
+    <string name="ln">ln</string>
+    <string name="logb">logb</string>
+    <string name="exp">e</string>
+    <string name="sqrt">√</string>
+    <string name="rad">RAD</string>
+    <string name="degree">DEG</string>
+</resources>
