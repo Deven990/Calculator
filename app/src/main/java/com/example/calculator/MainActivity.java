@@ -14,7 +14,6 @@ import android.widget.ToggleButton;
 import androidx.appcompat.widget.SwitchCompat;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import net.objecthunter.exp4j.Expression;
@@ -53,10 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         final ConstraintLayout new_layout = findViewById(R.id.constraintLayout);
-        SwitchCompat theme = findViewById(R.id.switch_theme);
         final Button add = findViewById(R.id.ButtonAdd);
         final Button sub = findViewById(R.id.ButtonSub);
         final Button mul = findViewById(R.id.ButtonMul);
@@ -87,196 +83,6 @@ public class MainActivity extends AppCompatActivity {
         final Button result = findViewById(R.id.result);
         curIn = findViewById(R.id.curIn);
 
-        theme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(!isChecked){
-                    new_layout.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button0.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button1.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button2.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button3.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button4.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button5.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button6.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button7.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button8.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button9.setBackgroundColor(Color.parseColor("#ffffff"));
-                    buttonclr.setBackgroundColor(Color.parseColor("#ffffff"));
-                    buttondec.setBackgroundColor(Color.parseColor("#ffffff"));
-                    buttonbracC.setBackgroundColor(Color.parseColor("#ffffff"));
-                    buttonbracO.setBackgroundColor(Color.parseColor("#ffffff"));
-                    add.setBackgroundColor(Color.parseColor("#ffffff"));
-                    sub.setBackgroundColor(Color.parseColor("#ffffff"));
-                    div.setBackgroundColor(Color.parseColor("#ffffff"));
-                    mul.setBackgroundColor(Color.parseColor("#ffffff"));
-                    pwr.setBackgroundColor(Color.parseColor("#ffffff"));
-                    inv.setBackgroundColor(Color.parseColor("#ffffff"));
-                    sin.setBackgroundColor(Color.parseColor("#ffffff"));
-                    cos.setBackgroundColor(Color.parseColor("#ffffff"));
-                    tan.setBackgroundColor(Color.parseColor("#ffffff"));
-                    log.setBackgroundColor(Color.parseColor("#ffffff"));
-                    e.setBackgroundColor(Color.parseColor("#ffffff"));
-                    sqrt.setBackgroundColor(Color.parseColor("#ffffff"));
-                    result.setBackgroundColor(Color.parseColor("#ffffff"));
-                    curIn.setBackgroundColor(Color.parseColor("#ffffff"));
-                    clr.setBackgroundColor(Color.parseColor("#ffffff"));
-                    button0.setTextColor(Color.parseColor("#111111"));
-                    button1.setTextColor(Color.parseColor("#111111"));
-                    button2.setTextColor(Color.parseColor("#111111"));
-                    button3.setTextColor(Color.parseColor("#111111"));
-                    button4.setTextColor(Color.parseColor("#111111"));
-                    button5.setTextColor(Color.parseColor("#111111"));
-                    button6.setTextColor(Color.parseColor("#111111"));
-                    button7.setTextColor(Color.parseColor("#111111"));
-                    button8.setTextColor(Color.parseColor("#111111"));
-                    button9.setTextColor(Color.parseColor("#111111"));
-                    buttonclr.setTextColor(Color.parseColor("#111111"));
-                    buttondec.setTextColor(Color.parseColor("#111111"));
-                    buttonbracC.setTextColor(Color.parseColor("#111111"));
-                    buttonbracO.setTextColor(Color.parseColor("#111111"));
-                    add.setTextColor(Color.parseColor("#111111"));
-                    sub.setTextColor(Color.parseColor("#111111"));
-                    div.setTextColor(Color.parseColor("#111111"));
-                    mul.setTextColor(Color.parseColor("#111111"));
-                    pwr.setTextColor(Color.parseColor("#111111"));
-                    inv.setTextColor(Color.parseColor("#111111"));
-                    sin.setTextColor(Color.parseColor("#111111"));
-                    cos.setTextColor(Color.parseColor("#111111"));
-                    tan.setTextColor(Color.parseColor("#111111"));
-                    log.setTextColor(Color.parseColor("#111111"));
-                    e.setTextColor(Color.parseColor("#111111"));
-                    sqrt.setTextColor(Color.parseColor("#111111"));
-                    result.setTextColor(Color.parseColor("#111111"));
-                    curIn.setTextColor(Color.parseColor("#111111"));
-                    clr.setTextColor(Color.parseColor("#111111"));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                        button0.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button1.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button2.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button3.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button4.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button5.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button6.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button7.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button8.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        button9.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        buttonclr.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        buttondec.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        buttonbracC.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        buttonbracO.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        add.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        sub.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        div.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        mul.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        pwr.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        inv.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        sin.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        cos.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        tan.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        log.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        e.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        sqrt.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        result.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        curIn.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                        clr.setOutlineSpotShadowColor(Color.parseColor("#ffffff"));
-                    }
-                    
-                }
-                else{
-                    new_layout.setBackgroundColor(Color.parseColor("#333333"));
-                    button0.setBackgroundColor(Color.parseColor("#333333"));
-                    button1.setBackgroundColor(Color.parseColor("#333333"));
-                    button2.setBackgroundColor(Color.parseColor("#333333"));
-                    button3.setBackgroundColor(Color.parseColor("#333333"));
-                    button4.setBackgroundColor(Color.parseColor("#333333"));
-                    button5.setBackgroundColor(Color.parseColor("#333333"));
-                    button6.setBackgroundColor(Color.parseColor("#333333"));
-                    button7.setBackgroundColor(Color.parseColor("#333333"));
-                    button8.setBackgroundColor(Color.parseColor("#333333"));
-                    button9.setBackgroundColor(Color.parseColor("#333333"));
-                    buttonclr.setBackgroundColor(Color.parseColor("#333333"));
-                    buttondec.setBackgroundColor(Color.parseColor("#333333"));
-                    buttonbracC.setBackgroundColor(Color.parseColor("#333333"));
-                    buttonbracO.setBackgroundColor(Color.parseColor("#333333"));
-                    add.setBackgroundColor(Color.parseColor("#333333"));
-                    sub.setBackgroundColor(Color.parseColor("#333333"));
-                    div.setBackgroundColor(Color.parseColor("#333333"));
-                    mul.setBackgroundColor(Color.parseColor("#333333"));
-                    pwr.setBackgroundColor(Color.parseColor("#333333"));
-                    inv.setBackgroundColor(Color.parseColor("#333333"));
-                    sin.setBackgroundColor(Color.parseColor("#333333"));
-                    cos.setBackgroundColor(Color.parseColor("#333333"));
-                    tan.setBackgroundColor(Color.parseColor("#333333"));
-                    log.setBackgroundColor(Color.parseColor("#333333"));
-                    e.setBackgroundColor(Color.parseColor("#333333"));
-                    sqrt.setBackgroundColor(Color.parseColor("#333333"));
-                    result.setBackgroundColor(Color.parseColor("#333333"));
-                    curIn.setBackgroundColor(Color.parseColor("#333333"));
-                    clr.setBackgroundColor(Color.parseColor("#333333"));
-                    button0.setTextColor(Color.parseColor("#ffffff"));
-                    button1.setTextColor(Color.parseColor("#ffffff"));
-                    button2.setTextColor(Color.parseColor("#ffffff"));
-                    button3.setTextColor(Color.parseColor("#ffffff"));
-                    button4.setTextColor(Color.parseColor("#ffffff"));
-                    button5.setTextColor(Color.parseColor("#ffffff"));
-                    button6.setTextColor(Color.parseColor("#ffffff"));
-                    button7.setTextColor(Color.parseColor("#ffffff"));
-                    button8.setTextColor(Color.parseColor("#ffffff"));
-                    button9.setTextColor(Color.parseColor("#ffffff"));
-                    buttonclr.setTextColor(Color.parseColor("#ffffff"));
-                    buttondec.setTextColor(Color.parseColor("#ffffff"));
-                    buttonbracC.setTextColor(Color.parseColor("#ffffff"));
-                    buttonbracO.setTextColor(Color.parseColor("#ffffff"));
-                    add.setTextColor(Color.parseColor("#ffffff"));
-                    sub.setTextColor(Color.parseColor("#ffffff"));
-                    div.setTextColor(Color.parseColor("#ffffff"));
-                    mul.setTextColor(Color.parseColor("#ffffff"));
-                    pwr.setTextColor(Color.parseColor("#ffffff"));
-                    inv.setTextColor(Color.parseColor("#ffffff"));
-                    sin.setTextColor(Color.parseColor("#ffffff"));
-                    cos.setTextColor(Color.parseColor("#ffffff"));
-                    tan.setTextColor(Color.parseColor("#ffffff"));
-                    log.setTextColor(Color.parseColor("#ffffff"));
-                    e.setTextColor(Color.parseColor("#ffffff"));
-                    sqrt.setTextColor(Color.parseColor("#ffffff"));
-                    result.setTextColor(Color.parseColor("#ffffff"));
-                    curIn.setTextColor(Color.parseColor("#ffffff"));
-                    clr.setTextColor(Color.parseColor("#ffffff"));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                        button0.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button1.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button2.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button3.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button4.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button5.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button6.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button7.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button8.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        button9.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        buttonclr.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        buttondec.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        buttonbracC.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        buttonbracO.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        add.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        sub.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        div.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        mul.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        pwr.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        inv.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        sin.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        cos.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        tan.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        log.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        e.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        sqrt.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        result.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        curIn.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                        clr.setOutlineSpotShadowColor(Color.parseColor("#333333"));
-                    }
-                }
-            }
-        });
         curIn.setShowSoftInputOnFocus(false);
         curIn.setText("");
 
@@ -485,10 +291,7 @@ public class MainActivity extends AppCompatActivity {
         clr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    deg = true;
-                } else
-                    deg = false;
+                deg = isChecked;
             }
         });
         result.setOnClickListener(new View.OnClickListener() {
@@ -497,15 +300,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 CalcIn2 = curIn.getText().toString();
                 try {
-                    if (deg) {
+                    if (deg)
                         expression = new ExpressionBuilder(CalcIn2).functions(myFunctions).build();
-                        double value = expression.evaluate();
-                        curIn.setText(Double.toString(value));
-                    } else {
+                    else
                         expression = new ExpressionBuilder(CalcIn2).build();
-                        double value = expression.evaluate();
-                        curIn.setText(Double.toString(value));
+                    String ans = String.format("%.5f",expression.evaluate());
+                    while(true) {
+                        if (ans.endsWith("0") && !ans.endsWith(".0"))
+                            ans = ans.substring(0,ans.length()-1);
+                        else
+                            break;
                     }
+                    curIn.setText(ans);
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "Invalid Input", Toast.LENGTH_SHORT).show();
                 }

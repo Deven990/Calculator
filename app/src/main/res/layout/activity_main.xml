@@ -7,29 +7,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorthemeDD"
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/switch_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/curIn"
         android:layout_width="357dp"
         android:layout_height="82dp"
         android:autofillHints=""
-        android:background="@color/colorthemeDD"
         android:inputType="text"
         android:textAlignment="center"
-        android:textColor="@color/Black"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.076" />
 
 
@@ -59,12 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
         android:text="@string/sine"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
         android:textSize="24dp"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -76,11 +64,10 @@
         android:id="@+id/Button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_3"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/result"
         app:layout_constraintEnd_toStartOf="@+id/ButtonSub"
@@ -93,11 +80,10 @@
         android:id="@+id/ButtonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/Add"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonMul"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,11 +97,10 @@
         android:id="@+id/ButtonMul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/multiply"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonSub"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -128,11 +113,10 @@
         android:id="@+id/Button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_1"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Buttondec"
         app:layout_constraintEnd_toStartOf="@+id/Button2"
@@ -145,11 +129,10 @@
         android:id="@+id/ButtonDiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/division"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonsqrt"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -162,11 +145,10 @@
         android:id="@+id/pwr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/power"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button9"
         app:layout_constraintEnd_toStartOf="@+id/Buttonclr"
@@ -179,11 +161,10 @@
         android:id="@+id/Button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_8"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button5"
         app:layout_constraintEnd_toStartOf="@+id/Button9"
@@ -196,11 +177,10 @@
         android:id="@+id/Button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_2"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button0"
         app:layout_constraintEnd_toStartOf="@+id/Button3"
@@ -213,11 +193,10 @@
         android:id="@+id/Button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_9"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button6"
         app:layout_constraintEnd_toStartOf="@+id/ButtonAdd"
@@ -231,12 +210,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/del"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
+          
         android:textSize="24dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.533"
@@ -249,11 +227,10 @@
         android:id="@+id/Button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_4"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button1"
         app:layout_constraintEnd_toStartOf="@+id/Button5"
@@ -266,11 +243,10 @@
         android:id="@+id/Button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/Six"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button3"
         app:layout_constraintEnd_toStartOf="@+id/ButtonMul"
@@ -283,11 +259,7 @@
         android:id="@+id/ButtonbracO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
         android:text="@string/string_bracket_open"
-        android:textColor="@color/Black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button7"
         app:layout_constraintEnd_toStartOf="@+id/ButtonbracC"
@@ -302,12 +274,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/tan"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
+          
         android:textSize="24dp"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintHorizontal_bias="0.5"
@@ -320,12 +291,11 @@
         android:id="@+id/Buttonclr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/pi"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonAdd"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -338,11 +308,10 @@
         android:id="@+id/Button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_7"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button4"
         app:layout_constraintEnd_toStartOf="@+id/Button8"
@@ -355,11 +324,10 @@
         android:id="@+id/ButtonbracC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/bracket_Close"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button8"
         app:layout_constraintEnd_toStartOf="@+id/pwr"
@@ -372,11 +340,10 @@
         android:id="@+id/Button0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_0"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonlog"
         app:layout_constraintEnd_toStartOf="@+id/result"
@@ -389,11 +356,10 @@
         android:id="@+id/Buttondec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/dot"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonclr"
         app:layout_constraintEnd_toStartOf="@+id/Button0"
@@ -406,11 +372,10 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/equals"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonexp"
         app:layout_constraintEnd_toStartOf="@+id/ButtonDiv"
@@ -423,11 +388,10 @@
         android:id="@+id/Button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/_5"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Button2"
         app:layout_constraintEnd_toStartOf="@+id/Button6"
@@ -440,11 +404,10 @@
         android:id="@+id/ButtonSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/substract"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/ButtonDiv"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -458,12 +421,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/cosine"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
+          
         android:textSize="24dp"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -476,10 +438,6 @@
         android:id="@+id/buttonclr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
-        android:textColor="@color/Black"
         android:textOff="@string/rad"
         android:textOn="@string/degree"
         android:textSize="24sp"
@@ -494,12 +452,8 @@
         android:id="@+id/buttonlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
         android:text="@string/logb"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/buttonexp"
@@ -512,12 +466,11 @@
         android:id="@+id/buttonexp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/exp"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/buttonsqrt"
@@ -530,12 +483,11 @@
         android:id="@+id/buttonsqrt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorthemeDD"
-        android:outlineSpotShadowColor="@color/colorthemeDD"
-        android:shadowColor="@color/colorthemeDD"
+  
+          
         android:text="@string/sqrt"
         android:textAllCaps="false"
-        android:textColor="@color/Black"
+          
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
