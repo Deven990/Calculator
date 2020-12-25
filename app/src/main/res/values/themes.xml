@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CalculatorApp" parent="Theme.MaterialComponents.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/White</item>
+        <item name="colorPrimaryVariant">@color/White</item>
+        <item name="colorOnPrimary">@color/Black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/White</item>
+        <item name="colorSecondaryVariant">@color/White</item>
+        <item name="colorOnSecondary">@color/White</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Button Theme -->
+        <item name="colorButtonNormal">@color/White</item>
+        <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/White</item>
+    </style>
+</resources>
