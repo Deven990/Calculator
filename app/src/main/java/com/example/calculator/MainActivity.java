@@ -1,17 +1,13 @@
 package com.example.calculator;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.ToggleButton;
-import androidx.appcompat.widget.SwitchCompat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -313,7 +309,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     curIn.setText(ans);
                 } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "Invalid Input", Toast.LENGTH_SHORT).show();
                 }
                 curIn.setSelection(curIn.length());
             }

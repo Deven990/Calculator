@@ -1,16 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.CalculatorApp" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.CalculatorApp" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/White</item>
         <item name="colorPrimaryVariant">@color/White</item>
         <item name="colorOnPrimary">@color/Black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/White</item>
-        <item name="colorSecondaryVariant">@color/White</item>
-        <item name="colorOnSecondary">@color/White</item>
+        <item name="colorSecondary">@color/Black</item>
+        <item name="colorSecondaryVariant">@color/Black</item>
+        <item name="colorOnSecondary">@color/Black</item>
         <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Navigation bar color. -->
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Button Theme -->
         <item name="colorButtonNormal">@color/White</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/White</item>

@@ -11,6 +11,8 @@
         <item name="colorOnSecondary">@color/Black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Navigation bar color. -->
+        <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Toggle Button Theme -->
         <item name="colorButtonNormal">@color/Black</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/Black</item>
