@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    /* Display Output */
+    /*  Display Output  */
 
     <EditText
         android:id="@+id/curIn"
