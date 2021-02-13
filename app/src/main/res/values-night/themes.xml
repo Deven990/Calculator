@@ -17,4 +17,19 @@
         <item name="colorButtonNormal">@color/Black</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/Black</item>
     </style>
+    <style name="Advance_Layout">
+        <item name="android:background">@color/Blue_Dark</item>
+        <item name="android:windowBackground">@color/Blue_Dark</item>
+        <item name="android:colorBackground">@color/Blue_Dark</item>
+        <item name="colorPrimary">@color/Blue_Dark</item>
+        <item name="colorPrimaryVariant">@color/Blue_Dark</item>
+        <item name="colorOnPrimary">@color/White</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/Blue_Dark</item>
+        <item name="colorSecondaryVariant">@color/Blue_Dark</item>
+        <item name="colorOnSecondary">@color/Blue_Dark</item>
+        <!-- Toggle Button Theme -->
+        <item name="colorButtonNormal">@color/Blue_Dark</item>
+        <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/Blue_Dark</item>
+    </style>
 </resources>

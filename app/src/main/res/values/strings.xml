@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="power">^</string>
-    <string name="clear">C</string>
     <string name="string_bracket_open">(</string>
     <string name="dot">.</string>
     <string name="substract">-</string>
@@ -20,16 +19,14 @@
     <string name="_9">9</string>
     <string name="_8">8</string>
     <string name="bracket_Close">)</string>
-    <string name="invalid_input">invalid input</string>
     <string name="tan">tan</string>
     <string name="cosine">cos</string>
     <string name="sine">sin</string>
     <string name="pi">π</string>
     <string name="del">del</string>
-    <string name="ln">ln</string>
-    <string name="logb">logb</string>
+    <string name="logb">log</string>
     <string name="exp">e</string>
     <string name="sqrt">√</string>
-    <string name="rad">RAD</string>
-    <string name="degree">DEG</string>
+    <string name="rad">rad</string>
+    <string name="degree">deg</string>
 </resources>

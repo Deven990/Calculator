@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -26,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     String[] splitText = new String[3];
     int cursorPos;
 
-    private Function[] myFunctions = {
+
+    private final Function[] myFunctions = {
             new Function("sin") {
                 public double apply(double... args) {
                     return Math.sin(Math.toRadians(args[0]));
@@ -48,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final ConstraintLayout new_layout = findViewById(R.id.constraintLayout);
+
         final Button add = findViewById(R.id.ButtonAdd);
         final Button sub = findViewById(R.id.ButtonSub);
         final Button mul = findViewById(R.id.ButtonMul);
         final Button div = findViewById(R.id.ButtonDiv);
         final Button pwr = findViewById(R.id.pwr);
-        final Button inv = findViewById(R.id.Buttonclr);
-        final Button sin = findViewById(R.id.button);
-        final Button cos = findViewById(R.id.button2);
-        final Button tan = findViewById(R.id.button3);
+        final Button pi = findViewById(R.id.pi);
+        final Button sin = findViewById(R.id.sine);
+        final Button cos = findViewById(R.id.cosine);
+        final Button tan = findViewById(R.id.tan);
         final Button button0 = findViewById(R.id.Button0);
         final Button button1 = findViewById(R.id.Button1);
         final Button button2 = findViewById(R.id.Button2);
@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
         final Button button7 = findViewById(R.id.Button7);
         final Button button8 = findViewById(R.id.Button8);
         final Button button9 = findViewById(R.id.Button9);
-        final Button buttonclr = findViewById(R.id.button4);
+        final Button delete = findViewById(R.id.delete);
         final Button buttondec = findViewById(R.id.Buttondec);
         final Button buttonbracC = findViewById(R.id.ButtonbracC);
         final Button buttonbracO = findViewById(R.id.ButtonbracO);
-        final ToggleButton clr = findViewById(R.id.buttonclr);
+        final ToggleButton deg_rad = findViewById(R.id.toggle_deg_rad);
         final Button log = findViewById(R.id.buttonlog);
         final Button e = findViewById(R.id.buttonexp);
         final Button sqrt = findViewById(R.id.buttonsqrt);
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 curIn.setSelection(cursorPos + 1);
             }
         });
-        inv.setOnClickListener(new View.OnClickListener() {
+        pi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        clr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        deg_rad.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 deg = isChecked;
@@ -314,7 +314,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonclr.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CalcIn2 = curIn.getText().toString();
@@ -333,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonclr.setOnLongClickListener(new View.OnLongClickListener() {
+        delete.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 curIn.setText("");
