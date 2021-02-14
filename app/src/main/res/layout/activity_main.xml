@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    /*  Display Output  */
+    /* Display Output */
 
     <EditText
         android:id="@+id/curIn"
@@ -54,161 +54,173 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.98053527" />
-    
+
     /* Advanced Function Layout */
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Advance_Function_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Advance_Layout"
         app:layout_constraintBottom_toTopOf="@id/Simple_Calc_Layout"
-        app:layout_constraintTop_toBottomOf="@id/centerGuideline"
-        android:theme="@style/Advance_Layout">
+        app:layout_constraintTop_toBottomOf="@id/centerGuideline">
 
-        /* TRIGNOMETRIC FUNCTIONS */
-
-        /* Button Sine */
-        <Button
-            android:id="@+id/sine"
+        <GridLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/sine"
-            android:textAllCaps="false"
-            android:textSize="24dp"
-            app:layout_constraintEnd_toStartOf="@+id/cosine"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage"
-            tools:targetApi="p" />
-
-        /* Button Cosine */
-
-        <Button
-            android:id="@+id/cosine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/cosine"
-            android:textAllCaps="false"
-            android:textSize="24dp"
-            app:layout_constraintEnd_toStartOf="@+id/tan"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/sine"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage"
-            tools:targetApi="p" />
-
-        /* Button Tan */
-
-        <Button
-            android:id="@+id/tan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/tan"
-            android:textAllCaps="false"
-            android:textSize="24dp"
-            app:layout_constraintEnd_toStartOf="@+id/toggle_deg_rad"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/cosine"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage"
-            tools:targetApi="p" />
-
-        /* OTHER FUNCTIONS */
-
-        /* Button Degree/Radian */
-
-        <ToggleButton
-            android:id="@+id/toggle_deg_rad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textOff="@string/rad"
-            android:textOn="@string/degree"
-            android:textSize="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@id/tan"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:targetApi="p" />
-
-        /* Button Log */
-
-        <Button
-            android:id="@+id/buttonlog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/logb"
-            android:textAllCaps="false"
-            android:textSize="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonexp"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sine"
-            tools:targetApi="p" />
-
-        /* Button Exponential */
-
-        <Button
-            android:id="@+id/buttonexp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/exp"
-            android:textAllCaps="false"
-            android:textSize="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonsqrt"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/buttonlog"
-            app:layout_constraintTop_toBottomOf="@+id/cosine"
-            tools:targetApi="p" />
-
-        /* Button Square Root */
-
-        <Button
-            android:id="@+id/buttonsqrt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/sqrt"
-            android:textAllCaps="false"
-            android:textSize="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/pi"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/buttonexp"
-            app:layout_constraintTop_toBottomOf="@+id/tan"
-            tools:targetApi="p" />
-
-        /* Button Pi */
-
-        <Button
-            android:id="@+id/pi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="@string/pi"
-            android:textAllCaps="false"
-            android:textSize="24dp"
+            android:layout_height="match_parent"
+            android:columnCount="5"
+            android:rowCount="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/buttonsqrt"
-            app:layout_constraintTop_toBottomOf="@+id/toggle_deg_rad"
-            tools:targetApi="p" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            /* TRIGNOMETRIC FUNCTIONS */
+
+            /* Button Sine */
+
+            <Button
+                android:id="@+id/sine"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/sine"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                android:minWidth="60dp"
+                tools:ignore="SpUsage"
+                tools:targetApi="p" />
+
+            /* Button Cosine */
+
+            <Button
+                android:id="@+id/cosine"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/cosine"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                tools:ignore="SpUsage"
+                tools:targetApi="p" />
+
+            /* Button Tan */
+
+            <Button
+                android:id="@+id/tan"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/tan"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                tools:ignore="SpUsage"
+                tools:targetApi="p" />
+
+            /* OTHER FUNCTIONS */
+
+            /* Factorial */
+
+            <Button
+                android:id="@+id/fact"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/factorial"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                tools:ignore="SpUsage"
+                tools:targetApi="p" />
+
+            /* Button Degree/Radian */
+
+            <ToggleButton
+                android:id="@+id/toggle_deg_rad"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textOff="@string/rad"
+                android:textOn="@string/degree"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                tools:targetApi="p" />
+
+            /* Button Log */
+
+            <Button
+                android:id="@+id/buttonlog"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/logb"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                tools:targetApi="p" />
+
+            /* Button Exponential */
+
+            <Button
+                android:id="@+id/buttonexp"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/exp"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                tools:targetApi="p" />
+
+            /* Button Square Root */
+
+            <Button
+                android:id="@+id/buttonsqrt"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/sqrt"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                tools:targetApi="p" />
+
+            /* Button Pi */
+
+            <Button
+                android:id="@+id/pi"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/pi"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                tools:targetApi="p" />
+            
+            /* Invert buttons */
+
+            <ToggleButton
+                android:id="@+id/invert_button"
+                android:minWidth="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textOff="@string/Invert"
+                android:textOn="@string/Invert"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                tools:targetApi="p" />
+        </GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     /* Simple Calculator Layout */
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Simple_Calc_Layout"
         android:layout_width="match_parent"
@@ -216,9 +228,10 @@
         app:layout_constraintBottom_toTopOf="@id/bottomGuideline"
         app:layout_constraintTop_toBottomOf="@id/Advance_Function_Layout">
 
-        /*      NUMPAD BUTTONS      */
-        
+        /* NUMPAD BUTTONS */
+
         /* Button 1 */
+
         <Button
             android:id="@+id/Button1"
             android:layout_width="wrap_content"
@@ -233,6 +246,7 @@
             tools:targetApi="p" />
 
         /* Button 2 */
+
         <Button
             android:id="@+id/Button2"
             android:layout_width="wrap_content"
@@ -247,6 +261,7 @@
             tools:targetApi="p" />
 
         /* Button 3 */
+
         <Button
             android:id="@+id/Button3"
             android:layout_width="wrap_content"
@@ -261,6 +276,7 @@
             tools:targetApi="p" />
 
         /* Button 4 */
+
         <Button
             android:id="@+id/Button4"
             android:layout_width="wrap_content"
@@ -275,6 +291,7 @@
             tools:targetApi="p" />
 
         /* Button 5 */
+
         <Button
             android:id="@+id/Button5"
             android:layout_width="wrap_content"
@@ -289,6 +306,7 @@
             tools:targetApi="p" />
 
         /* Button 6 */
+
         <Button
             android:id="@+id/Button6"
             android:layout_width="wrap_content"
@@ -303,6 +321,7 @@
             tools:targetApi="p" />
 
         /* Button 7 */
+
         <Button
             android:id="@+id/Button7"
             android:layout_width="wrap_content"
@@ -317,6 +336,7 @@
             tools:targetApi="p" />
 
         /* Button 8 */
+
         <Button
             android:id="@+id/Button8"
             android:layout_width="wrap_content"
@@ -331,6 +351,7 @@
             tools:targetApi="p" />
 
         /* Button 9 */
+
         <Button
             android:id="@+id/Button9"
             android:layout_width="wrap_content"
@@ -345,6 +366,7 @@
             tools:targetApi="p" />
 
         /* Button 0 */
+
         <Button
             android:id="@+id/Button0"
             android:layout_width="wrap_content"
@@ -358,9 +380,10 @@
             app:layout_constraintTop_toBottomOf="@+id/Button2"
             tools:targetApi="p" />
 
-        /*      ARITHEMATIC OPERATORS       */
+        /* ARITHEMATIC OPERATORS */
 
         /* Button Add */
+
         <Button
             android:id="@+id/ButtonAdd"
             android:layout_width="wrap_content"
@@ -375,6 +398,7 @@
             tools:targetApi="p" />
 
         /* Button Substract */
+
         <Button
             android:id="@+id/ButtonSub"
             android:layout_width="wrap_content"
@@ -389,6 +413,7 @@
             tools:targetApi="p" />
 
         /* Button Multipy */
+
         <Button
             android:id="@+id/ButtonMul"
             android:layout_width="wrap_content"
@@ -403,6 +428,7 @@
             tools:targetApi="p" />
 
         /* Button Divide */
+
         <Button
             android:id="@+id/ButtonDiv"
             android:layout_width="wrap_content"
@@ -417,6 +443,7 @@
             tools:targetApi="p" />
 
         /* Button Power */
+
         <Button
             android:id="@+id/pwr"
             android:layout_width="wrap_content"
@@ -431,6 +458,7 @@
             tools:targetApi="p" />
 
         /* Button Open Bracket */
+
         <Button
             android:id="@+id/ButtonbracO"
             android:layout_width="wrap_content"
@@ -446,6 +474,7 @@
             tools:targetApi="p" />
 
         /* Button Close Bracket */
+
         <Button
             android:id="@+id/ButtonbracC"
             android:layout_width="wrap_content"
@@ -460,6 +489,7 @@
             tools:targetApi="p" />
 
         /* Button Decimal */
+
         <Button
             android:id="@+id/Buttondec"
             android:layout_width="wrap_content"
@@ -474,6 +504,7 @@
             tools:targetApi="p" />
 
         /* Button Delete */
+
         <Button
             android:id="@+id/delete"
             android:layout_width="wrap_content"
@@ -490,6 +521,7 @@
             tools:targetApi="p" />
 
         /* Button Equals */
+
         <Button
             android:id="@+id/result"
             android:layout_width="wrap_content"
@@ -502,7 +534,7 @@
             app:layout_constraintStart_toEndOf="@+id/Button0"
             app:layout_constraintTop_toBottomOf="@+id/Button3"
             tools:targetApi="p" />
-        
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

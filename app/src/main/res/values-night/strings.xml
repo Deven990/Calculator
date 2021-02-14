@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="factorial">!</string>
+    <string name="Invert">inv</string>
+    <string name="sin_inv">asin</string>
+    <string name="cos_inv">acos</string>
+    <string name="tan_inv">atan</string>
+</resources>

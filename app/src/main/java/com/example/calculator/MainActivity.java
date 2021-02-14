@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
+import net.objecthunter.exp4j.operator.Operator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     String CalcIn2;
     Expression expression;
-    boolean deg;
+    boolean deg,inv;
     String[] splitText = new String[3];
     int cursorPos;
 
@@ -42,6 +43,39 @@ public class MainActivity extends AppCompatActivity {
                     return Math.tan(Math.toRadians(args[0]));
                 }
             },
+            new Function("asin") {
+                public double apply(double... args) {
+                    return Math.toDegrees(Math.asin(args[0]));
+                }
+            },
+            new Function("acos") {
+                public double apply(double... args) {
+                    return Math.toDegrees(Math.acos(args[0]));
+                }
+            },
+            new Function("atan") {
+                public double apply(double... args) {
+                    return Math.toDegrees(Math.atan(args[0]));
+                }
+            },
+    };
+
+    Operator factorial = new Operator("!", 1, true, Operator.PRECEDENCE_POWER + 1) {
+        @Override
+        public double apply(double... args) {
+            final int arg = (int) args[0];
+            if ((double) arg != args[0]) {
+                throw new IllegalArgumentException("Operand for factorial has to be an integer");
+            }
+            if (arg < 0) {
+                throw new IllegalArgumentException("The operand of the factorial can not be less than zero");
+            }
+            double result = 1;
+            for (int i = 1; i <= arg; i++) {
+                result *= i;
+            }
+            return result;
+        }
     };
 
     @Override
@@ -77,10 +111,29 @@ public class MainActivity extends AppCompatActivity {
         final Button e = findViewById(R.id.buttonexp);
         final Button sqrt = findViewById(R.id.buttonsqrt);
         final Button result = findViewById(R.id.result);
+        final Button fact = findViewById(R.id.fact);
+        final ToggleButton invert = findViewById(R.id.invert_button);
         curIn = findViewById(R.id.curIn);
 
         curIn.setShowSoftInputOnFocus(false);
         curIn.setText("");
+
+        invert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                inv = isChecked;
+                if(inv){
+                    sin.setText(R.string.sin_inv);
+                    cos.setText(R.string.cos_inv);
+                    tan.setText(R.string.tan_inv);
+                }
+                else{
+                    sin.setText(R.string.sine);
+                    cos.setText(R.string.cosine);
+                    tan.setText(R.string.tan);
+                }
+            }
+        });
 
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -231,32 +284,53 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "pi" + splitText[1]);
-                curIn.setSelection(cursorPos + 2);
+                curIn.setText(splitText[0] + "π" + splitText[1]);
+                curIn.setSelection(cursorPos + 1);
             }
         });
         sin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "sin(" + splitText[1]);
-                curIn.setSelection(cursorPos + 4);
+                if(!inv) {
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "sin(" + splitText[1]);
+                    curIn.setSelection(cursorPos + 4);
+                }
+                else{
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "asin(" + splitText[1]);
+                    curIn.setSelection(cursorPos + 5);
+                }
             }
         });
         cos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "cos(" + splitText[1]);
-                curIn.setSelection(cursorPos + 4);
+                if(!inv) {
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "cos(" + splitText[1]);
+                    curIn.setSelection(cursorPos + 4);
+                }
+                else{
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "acos(" + splitText[1]);
+                    curIn.setSelection(cursorPos + 5);
+                }
             }
         });
         tan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "tan(" + splitText[1]);
-                curIn.setSelection(cursorPos + 4);
+                if(!inv) {
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "tan(" + splitText[1]);
+                    curIn.setSelection(cursorPos + 4);
+                }
+                else{
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "atan(" + splitText[1]);
+                    curIn.setSelection(cursorPos + 5);
+                }
             }
         });
         log.setOnClickListener(new View.OnClickListener() {
@@ -271,8 +345,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "exp" + splitText[1]);
-                curIn.setSelection(cursorPos + 3);
+                curIn.setText(splitText[0] + "e" + splitText[1]);
+                curIn.setSelection(cursorPos + 1);
             }
         });
         sqrt.setOnClickListener(new View.OnClickListener() {
@@ -283,7 +357,14 @@ public class MainActivity extends AppCompatActivity {
                 curIn.setSelection(cursorPos + 4);
             }
         });
-
+        fact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                splitText = splitStrings(curIn.getText());
+                curIn.setText(splitText[0] + "!" + splitText[1]);
+                curIn.setSelection(cursorPos + 1);
+            }
+        });
         deg_rad.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -297,9 +378,9 @@ public class MainActivity extends AppCompatActivity {
                 CalcIn2 = curIn.getText().toString();
                 try {
                     if (deg)
-                        expression = new ExpressionBuilder(CalcIn2).functions(myFunctions).build();
+                        expression = new ExpressionBuilder(CalcIn2).operator(factorial).functions(myFunctions).build();
                     else
-                        expression = new ExpressionBuilder(CalcIn2).build();
+                        expression = new ExpressionBuilder(CalcIn2).operator(factorial).build();
                     String ans = String.format("%.5f",expression.evaluate());
                     while(true) {
                         if (ans.endsWith("0") && !ans.endsWith(".0"))

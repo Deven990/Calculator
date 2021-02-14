@@ -29,4 +29,9 @@
     <string name="sqrt">√</string>
     <string name="rad">rad</string>
     <string name="degree">deg</string>
+    <string name="factorial">!</string>
+    <string name="Invert">inv</string>
+    <string name="sin_inv"><![CDATA[ sin<sup><small>-1</small></sup> ]]></string>
+    <string name="cos_inv">acos</string>
+    <string name="tan_inv">atan</string>
 </resources>
