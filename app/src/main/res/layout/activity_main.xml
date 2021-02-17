@@ -16,10 +16,11 @@
         android:layout_height="82dp"
         android:autofillHints=""
         android:hint=""
+        android:background="@null"
         android:inputType="text"
         android:textAlignment="center"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/Advance_Function_Layout"
+        app:layout_constraintBottom_toTopOf="@+id/centerGuideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32" />
+        app:layout_constraintGuide_percent="0.32006633" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomGuideline"
@@ -63,7 +64,8 @@
         android:layout_height="wrap_content"
         android:theme="@style/Advance_Layout"
         app:layout_constraintBottom_toTopOf="@id/Simple_Calc_Layout"
-        app:layout_constraintTop_toBottomOf="@id/centerGuideline">
+        app:layout_constraintTop_toBottomOf="@id/centerGuideline"
+        android:visibility="invisible">
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -148,7 +150,7 @@
                 android:textSize="18dp"
                 tools:targetApi="p" />
 
-            /* Button Log */
+            /* Button Log/e */
 
             <Button
                 android:id="@+id/buttonlog"
@@ -162,15 +164,15 @@
                 android:textSize="18dp"
                 tools:targetApi="p" />
 
-            /* Button Exponential */
+            /* Button Power */
 
             <Button
-                android:id="@+id/buttonexp"
+                android:id="@+id/pwr"
                 android:minWidth="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="@string/exp"
+                android:text="@string/power"
                 android:layout_gravity="center"
                 android:textAllCaps="false"
                 android:textSize="18dp"
@@ -203,7 +205,7 @@
                 android:layout_gravity="center"
                 android:textSize="18dp"
                 tools:targetApi="p" />
-            
+
             /* Invert buttons */
 
             <ToggleButton
@@ -394,7 +396,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/Button9"
-            app:layout_constraintTop_toBottomOf="@id/delete"
+            app:layout_constraintTop_toBottomOf="@id/adv"
             tools:targetApi="p" />
 
         /* Button Substract */
@@ -445,13 +447,14 @@
         /* Button Power */
 
         <Button
-            android:id="@+id/pwr"
+            android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/power"
-            android:textSize="26sp"
+            android:text="@string/del"
+            android:textAllCaps="false"
+            android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/Button9"
-            app:layout_constraintEnd_toStartOf="@+id/delete"
+            app:layout_constraintEnd_toStartOf="@+id/adv"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/ButtonbracC"
             app:layout_constraintTop_toTopOf="parent"
@@ -482,7 +485,7 @@
             android:text="@string/bracket_Close"
             android:textSize="26sp"
             app:layout_constraintBottom_toTopOf="@+id/Button8"
-            app:layout_constraintEnd_toStartOf="@+id/pwr"
+            app:layout_constraintEnd_toStartOf="@+id/delete"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/ButtonbracO"
             app:layout_constraintTop_toTopOf="parent"
@@ -503,19 +506,20 @@
             app:layout_constraintTop_toBottomOf="@+id/Button1"
             tools:targetApi="p" />
 
-        /* Button Delete */
+        /* Button Advanced Options */
 
-        <Button
-            android:id="@+id/delete"
+        <ToggleButton
+            android:id="@+id/adv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/del"
+            android:textOff="@string/adv"
+            android:textOn="@string/norm"
             android:textAllCaps="false"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/ButtonAdd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/pwr"
+            app:layout_constraintStart_toEndOf="@+id/delete"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpUsage"
             tools:targetApi="p" />

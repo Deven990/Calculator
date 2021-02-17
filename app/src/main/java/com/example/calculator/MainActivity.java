@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -22,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     String CalcIn2;
     Expression expression;
-    boolean deg,inv;
+    boolean deg,inv,adv_option;
     String[] splitText = new String[3];
     int cursorPos;
-
 
     private final Function[] myFunctions = {
             new Function("sin") {
@@ -83,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final ConstraintLayout Advance_Layout = findViewById(R.id.Advance_Function_Layout);
+
         final Button add = findViewById(R.id.ButtonAdd);
         final Button sub = findViewById(R.id.ButtonSub);
         final Button mul = findViewById(R.id.ButtonMul);
@@ -113,10 +117,30 @@ public class MainActivity extends AppCompatActivity {
         final Button result = findViewById(R.id.result);
         final Button fact = findViewById(R.id.fact);
         final ToggleButton invert = findViewById(R.id.invert_button);
+        final ToggleButton adv = findViewById(R.id.adv);
         curIn = findViewById(R.id.curIn);
 
         curIn.setShowSoftInputOnFocus(false);
         curIn.setText("");
+
+        adv.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                adv_option = isChecked;
+                Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.to_orig_place);
+                Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.to_set_place);
+                if(adv_option){
+                    Advance_Layout.startAnimation(slide_up);
+                    Advance_Layout.setVisibility(View.VISIBLE);
+                }
+                else{
+                    Advance_Layout.startAnimation(slide_down);
+                    Advance_Layout.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
         invert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -126,11 +150,13 @@ public class MainActivity extends AppCompatActivity {
                     sin.setText(R.string.sin_inv);
                     cos.setText(R.string.cos_inv);
                     tan.setText(R.string.tan_inv);
+                    log.setText(R.string.exp);
                 }
                 else{
                     sin.setText(R.string.sine);
                     cos.setText(R.string.cosine);
                     tan.setText(R.string.tan);
+                    log.setText(R.string.logb);
                 }
             }
         });
@@ -336,17 +362,16 @@ public class MainActivity extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "log" + splitText[1]);
-                curIn.setSelection(cursorPos + 3);
-            }
-        });
-        e.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "e" + splitText[1]);
-                curIn.setSelection(cursorPos + 1);
+                if(!inv) {
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "log" + splitText[1]);
+                    curIn.setSelection(cursorPos + 3);
+                }
+                else{
+                    splitText = splitStrings(curIn.getText());
+                    curIn.setText(splitText[0] + "e" + splitText[1]);
+                    curIn.setSelection(cursorPos + 1);
+                }
             }
         });
         sqrt.setOnClickListener(new View.OnClickListener() {

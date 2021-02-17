@@ -5,4 +5,6 @@
     <string name="sin_inv">asin</string>
     <string name="cos_inv">acos</string>
     <string name="tan_inv">atan</string>
+    <string name="adv">adv</string>
+    <string name="norm">norm</string>
 </resources>

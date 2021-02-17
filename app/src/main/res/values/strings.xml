@@ -34,4 +34,6 @@
     <string name="sin_inv"><![CDATA[ sin<sup><small>-1</small></sup> ]]></string>
     <string name="cos_inv">acos</string>
     <string name="tan_inv">atan</string>
+    <string name="adv">adv</string>
+    <string name="norm">norm</string>
 </resources>
