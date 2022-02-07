@@ -1,26 +1,20 @@
 package com.example.calculator;
 
 import android.annotation.SuppressLint;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
 import net.objecthunter.exp4j.operator.Operator;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     String CalcIn2,CalcIn3;
     Expression expression;
-    boolean deg,inv,adv_option,lang_flag;
+    boolean deg;
+    boolean inv;
+    boolean lang_flag;
     String[] splitText = new String[3];
     int cursorPos;
 
@@ -88,8 +84,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ConstraintLayout Advance_Layout = findViewById(R.id.Advance_Function_Layout);
-
         final Button add = findViewById(R.id.ButtonAdd);
         final Button sub = findViewById(R.id.ButtonSub);
         final Button mul = findViewById(R.id.ButtonMul);
@@ -115,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonbracO = findViewById(R.id.ButtonbracO);
         final ToggleButton deg_rad = findViewById(R.id.toggle_deg_rad);
         final Button log = findViewById(R.id.buttonlog);
-        final Button e = findViewById(R.id.buttonexp);
         final Button sqrt = findViewById(R.id.buttonsqrt);
         final Button result = findViewById(R.id.result);
         final Button fact = findViewById(R.id.fact);
@@ -153,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         button0.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
@@ -170,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
@@ -311,12 +306,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!inv) {
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "sin(" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.sine) + getText(R.string.string_bracket_open) + splitText[1]);
                     curIn.setSelection(cursorPos + 4);
                 }
                 else{
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "asin(" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.sin_inv) + getText(R.string.string_bracket_open) + splitText[1]);
                     curIn.setSelection(cursorPos + 5);
                 }
             }
@@ -326,12 +321,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!inv) {
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "cos(" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.cosine) + getText(R.string.string_bracket_open) + splitText[1]);
                     curIn.setSelection(cursorPos + 4);
                 }
                 else{
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "acos(" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.cos_inv) + getText(R.string.string_bracket_open) + splitText[1]);
                     curIn.setSelection(cursorPos + 5);
                 }
             }
@@ -341,12 +336,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!inv) {
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "tan(" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.tan) + getText(R.string.string_bracket_open) + splitText[1]);
                     curIn.setSelection(cursorPos + 4);
                 }
                 else{
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "atan(" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.tan_inv) + getText(R.string.string_bracket_open) + splitText[1]);
                     curIn.setSelection(cursorPos + 5);
                 }
             }
@@ -356,12 +351,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!inv) {
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "log" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.logb) + splitText[1]);
                     curIn.setSelection(cursorPos + 3);
                 }
                 else{
                     splitText = splitStrings(curIn.getText());
-                    curIn.setText(splitText[0] + "e" + splitText[1]);
+                    curIn.setText(splitText[0] + getText(R.string.exp) + splitText[1]);
                     curIn.setSelection(cursorPos + 1);
                 }
             }
