@@ -1,6 +1,7 @@
 package com.example.calculator;
 
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -19,13 +20,15 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.function.Function;
 import net.objecthunter.exp4j.operator.Operator;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText curIn;
 
-    String CalcIn2;
+    String CalcIn2,CalcIn3;
     Expression expression;
-    boolean deg,inv,adv_option;
+    boolean deg,inv,adv_option,lang_flag;
     String[] splitText = new String[3];
     int cursorPos;
 
@@ -165,15 +168,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "0" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._0) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
+
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "1" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._1) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -181,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "2" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._2) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -189,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "3" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._3) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -197,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "4" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._4) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -205,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "5" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._5) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -213,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "6" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._6) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -221,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "7" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._7) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -229,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "8" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._8) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -237,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 splitText = splitStrings(curIn.getText());
-                curIn.setText(splitText[0] + "9" + splitText[1]);
+                curIn.setText(splitText[0] + getText(R.string._9) + splitText[1]);
                 curIn.setSelection(cursorPos + 1);
             }
         });
@@ -400,20 +404,79 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
-                CalcIn2 = curIn.getText().toString();
+                CalcIn3 = curIn.getText().toString();
+                CalcIn2 ="";
+                lang_flag = false;
+                for(int i=0;i<CalcIn3.length();i++){
+                    switch(CalcIn3.charAt(i)){
+                        case '०': CalcIn2 += "0"; lang_flag = true; break;
+                        case '१': CalcIn2 += "1"; lang_flag = true; break;
+                        case '२': CalcIn2 += "2"; lang_flag = true; break;
+                        case '३': CalcIn2 += "3"; lang_flag = true; break;
+                        case '४': CalcIn2 += "4"; lang_flag = true; break;
+                        case '५': CalcIn2 += "5"; lang_flag = true; break;
+                        case '६': CalcIn2 += "6"; lang_flag = true; break;
+                        case '७': CalcIn2 += "7"; lang_flag = true; break;
+                        case '८': CalcIn2 += "8"; lang_flag = true; break;
+                        case '९': CalcIn2 += "9"; lang_flag = true; break;
+                        default : CalcIn2 += String.valueOf(CalcIn3.charAt(i)); break;
+                    }
+                }
                 try {
                     if (deg)
                         expression = new ExpressionBuilder(CalcIn2).operator(factorial).functions(myFunctions).build();
                     else
                         expression = new ExpressionBuilder(CalcIn2).operator(factorial).build();
                     String ans = String.format("%.5f",expression.evaluate());
+                    String answer="";
                     while(true) {
                         if (ans.endsWith("0") && !ans.endsWith(".0"))
                             ans = ans.substring(0,ans.length()-1);
                         else
                             break;
                     }
-                    curIn.setText(ans);
+                    if(getText(R.string._0).equals("०")) {
+                        for (int i = 0; i < ans.length(); i++) {
+                            switch (ans.charAt(i)) {
+                                case '0':
+                                    answer += getText(R.string._0);
+                                    break;
+                                case '1':
+                                    answer += getText(R.string._1);
+                                    break;
+                                case '2':
+                                    answer += getText(R.string._2);
+                                    break;
+                                case '3':
+                                    answer += getText(R.string._3);
+                                    break;
+                                case '4':
+                                    answer += getText(R.string._4);
+                                    break;
+                                case '5':
+                                    answer += getText(R.string._5);
+                                    break;
+                                case '6':
+                                    answer += getText(R.string._6);
+                                    break;
+                                case '7':
+                                    answer += getText(R.string._7);
+                                    break;
+                                case '8':
+                                    answer += getText(R.string._8);
+                                    break;
+                                case '9':
+                                    answer += getText(R.string._9);
+                                    break;
+                                default:
+                                    answer += String.valueOf(ans.charAt(i));
+                                    break;
+                            }
+                        }
+                    }
+                    else
+                        answer = ans;
+                    curIn.setText(answer);
                 } catch (Exception e) {
                 }
                 curIn.setSelection(curIn.length());

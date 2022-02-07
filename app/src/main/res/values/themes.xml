@@ -16,7 +16,7 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Button Theme -->
-        <item name="colorButtonNormal">@color/White</item>
+        <item name="colorButtonNormal">@android:color/white</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/White</item>
     </style>
     <style name="Advance_Layout">

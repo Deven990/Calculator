@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">कैलकुलेटर</string>
+    <string name="_1">१</string>
+    <string name="_2">२</string>
+    <string name="_3">३</string>
+    <string name="_4">४</string>
+    <string name="_5">५</string>
+    <string name="_6">६</string>
+    <string name="_7">७</string>
+    <string name="_8">८</string>
+    <string name="_9">९</string>
+    <string name="_0">०</string>
+</resources>

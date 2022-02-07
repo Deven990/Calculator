@@ -1,39 +1,39 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="power">^</string>
-    <string name="string_bracket_open">(</string>
-    <string name="dot">.</string>
-    <string name="substract">-</string>
-    <string name="equals">=</string>
-    <string name="division">/</string>
-    <string name="multiply">*</string>
-    <string name="Six">6</string>
+    <string name="power" translatable="false">^</string>
+    <string name="string_bracket_open" translatable="false">(</string>
+    <string name="dot" translatable="false">.</string>
+    <string name="substract" translatable="false">-</string>
+    <string name="equals" translatable="false">=</string>
+    <string name="division" translatable="false">/</string>
+    <string name="multiply" translatable="false">*</string>
+    <string name="_6">6</string>
     <string name="_2">2</string>
     <string name="_4">4</string>
     <string name="_3">3</string>
-    <string name="Add">+</string>
+    <string name="Add" translatable="false">+</string>
     <string name="_5">5</string>
     <string name="_0">0</string>
     <string name="_7">7</string>
     <string name="_1">1</string>
     <string name="_9">9</string>
     <string name="_8">8</string>
-    <string name="bracket_Close">)</string>
-    <string name="tan">tan</string>
-    <string name="cosine">cos</string>
-    <string name="sine">sin</string>
-    <string name="pi">π</string>
-    <string name="del">del</string>
-    <string name="logb">log</string>
-    <string name="exp">e</string>
-    <string name="sqrt">√</string>
-    <string name="rad">rad</string>
-    <string name="degree">deg</string>
-    <string name="factorial">!</string>
-    <string name="Invert">inv</string>
-    <string name="sin_inv"><![CDATA[ sin<sup><small>-1</small></sup> ]]></string>
-    <string name="cos_inv">acos</string>
-    <string name="tan_inv">atan</string>
-    <string name="adv">adv</string>
-    <string name="norm">norm</string>
+    <string name="bracket_Close" translatable="false">)</string>
+    <string name="tan" translatable="false">tan</string>
+    <string name="cosine" translatable="false">cos</string>
+    <string name="sine" translatable="false">sin</string>
+    <string name="pi" translatable="false">π</string>
+    <string name="del" translatable="false">\u232b</string>
+    <string name="logb" translatable="false">log</string>
+    <string name="exp" translatable="false">e</string>
+    <string name="sqrt" translatable="false">√</string>
+    <string name="rad" translatable="false">rad</string>
+    <string name="degree" translatable="false">deg</string>
+    <string name="factorial" translatable="false">!</string>
+    <string name="Invert" translatable="false">inv</string>
+    <string name="sin_inv" translatable="false"><![CDATA[ sin<sup><small>-1</small></sup> ]]></string>
+    <string name="cos_inv" translatable="false">acos</string>
+    <string name="tan_inv" translatable="false">atan</string>
+    <string name="adv" translatable="false">adv</string>
+    <string name="norm" translatable="false">norm</string>
 </resources>

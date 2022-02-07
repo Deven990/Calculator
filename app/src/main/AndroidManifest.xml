@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculatorApp">
         <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden"
-            tools:ignore="Instantiatable">
+            tools:ignore="Instantiatable" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Theme.CalculatorApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Black</item>
+        <item name="colorPrimary">@android:color/system_accent2_800</item>
         <item name="colorPrimaryVariant">@color/Black</item>
         <item name="colorOnPrimary">@color/White</item>
         <!-- Secondary brand color. -->
@@ -16,20 +17,5 @@
         <!-- Toggle Button Theme -->
         <item name="colorButtonNormal">@color/Black</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/Black</item>
-    </style>
-    <style name="Advance_Layout">
-        <item name="android:background">@color/Blue_Dark</item>
-        <item name="android:windowBackground">@color/Blue_Dark</item>
-        <item name="android:colorBackground">@color/Blue_Dark</item>
-        <item name="colorPrimary">@color/Blue_Dark</item>
-        <item name="colorPrimaryVariant">@color/Blue_Dark</item>
-        <item name="colorOnPrimary">@color/White</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/Blue_Dark</item>
-        <item name="colorSecondaryVariant">@color/Blue_Dark</item>
-        <item name="colorOnSecondary">@color/Blue_Dark</item>
-        <!-- Toggle Button Theme -->
-        <item name="colorButtonNormal">@color/Blue_Dark</item>
-        <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/Blue_Dark</item>
     </style>
 </resources>
