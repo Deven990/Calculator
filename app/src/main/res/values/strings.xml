@@ -36,4 +36,5 @@
     <string name="tan_inv" translatable="false">atan</string>
     <string name="adv" translatable="false">adv</string>
     <string name="norm" translatable="false">norm</string>
+    <string name="AC">AC</string>
 </resources>

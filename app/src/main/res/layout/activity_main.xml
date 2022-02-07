@@ -15,8 +15,8 @@
         android:id="@+id/curIn"
         android:layout_width="357dp"
         android:layout_height="82dp"
-        android:background="@null"
         android:autofillHints=""
+        android:background="@null"
         android:inputType="text"
         android:textAlignment="center"
         android:textSize="32sp"
@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.745"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     /* GuideLines */
 
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/leftGuideline"
@@ -59,17 +59,15 @@
 
     /* Advanced Function Layout */
 
-    /* Simple Calculator Layout */
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Advance_Function_Layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:theme="@style/Advance_Layout"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/Simple_Calc_Layout"
-        app:layout_constraintTop_toBottomOf="@id/centerGuideline"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/curIn">
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -90,10 +88,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/sine"
                 android:textAllCaps="false"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 tools:ignore="SpUsage"
                 tools:targetApi="p" />
 
@@ -104,10 +103,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/cosine"
                 android:textAllCaps="false"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 tools:ignore="SpUsage"
                 tools:targetApi="p" />
 
@@ -118,10 +118,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/tan"
                 android:textAllCaps="false"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 tools:ignore="SpUsage"
                 tools:targetApi="p" />
 
@@ -134,10 +135,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/factorial"
                 android:textAllCaps="false"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 tools:ignore="SpUsage"
                 tools:targetApi="p" />
 
@@ -148,10 +150,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:textOff="@string/rad"
                 android:textOn="@string/degree"
                 android:textSize="18sp"
+                tools:ignore="SpUsage"
                 tools:targetApi="p" />
 
             /* Button Log/e */
@@ -162,7 +166,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/logb"
                 android:textAllCaps="false"
                 android:textSize="18sp"
@@ -176,7 +181,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/power"
                 android:textAllCaps="false"
                 android:textSize="18sp"
@@ -190,7 +196,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/sqrt"
                 android:textAllCaps="false"
                 android:textSize="18sp"
@@ -204,7 +211,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:text="@string/pi"
                 android:textAllCaps="false"
                 android:textSize="18sp"
@@ -217,13 +225,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:minWidth="60dp"
+                android:background="@drawable/rounded_corner"
+                android:minWidth="75dp"
                 android:textOff="@string/Invert"
                 android:textOn="@string/Invert"
                 android:textSize="18sp"
+                tools:ignore="SpUsage"
                 tools:targetApi="p" />
         </GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    /* Simple Calculator Layout */
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Simple_Calc_Layout"
@@ -241,8 +253,8 @@
 
         <Button
             android:id="@+id/Button1"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_1"
             android:textSize="26sp"
@@ -257,8 +269,8 @@
 
         <Button
             android:id="@+id/Button2"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_2"
             android:textSize="26sp"
@@ -273,8 +285,8 @@
 
         <Button
             android:id="@+id/Button3"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_3"
             android:textSize="26sp"
@@ -289,8 +301,8 @@
 
         <Button
             android:id="@+id/Button4"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_4"
             android:textSize="26sp"
@@ -305,8 +317,8 @@
 
         <Button
             android:id="@+id/Button5"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_5"
             android:textSize="26sp"
@@ -321,8 +333,8 @@
 
         <Button
             android:id="@+id/Button6"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_6"
             android:textSize="26sp"
@@ -337,8 +349,8 @@
 
         <Button
             android:id="@+id/Button7"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_7"
             android:textSize="26sp"
@@ -353,8 +365,8 @@
 
         <Button
             android:id="@+id/Button8"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_8"
             android:textSize="26sp"
@@ -371,8 +383,8 @@
 
         <Button
             android:id="@+id/Button9"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_9"
             android:textSize="26sp"
@@ -385,8 +397,8 @@
 
         <Button
             android:id="@+id/Button0"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/_0"
             android:textSize="26sp"
@@ -403,8 +415,8 @@
 
         <Button
             android:id="@+id/ButtonAdd"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/Add"
             android:textSize="26sp"
@@ -412,15 +424,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/Button9"
-            app:layout_constraintTop_toBottomOf="@id/adv"
+            app:layout_constraintTop_toBottomOf="@id/ac"
             tools:targetApi="p" />
 
         /* Button Substract */
 
         <Button
             android:id="@+id/ButtonSub"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/substract"
             android:textSize="26sp"
@@ -429,14 +441,15 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/Button3"
             app:layout_constraintTop_toBottomOf="@+id/ButtonMul"
+            tools:ignore="TextContrastCheck"
             tools:targetApi="p" />
 
         /* Button Multiply */
 
         <Button
             android:id="@+id/ButtonMul"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/multiply"
             android:textSize="26sp"
@@ -451,8 +464,8 @@
 
         <Button
             android:id="@+id/ButtonDiv"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/division"
             android:textSize="26sp"
@@ -469,13 +482,13 @@
 
         <Button
             android:id="@+id/delete"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/del"
             android:textAllCaps="false"
             android:textSize="24sp"
-            app:layout_constraintEnd_toStartOf="@+id/adv"
+            app:layout_constraintEnd_toStartOf="@+id/ac"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/ButtonbracC"
             app:layout_constraintTop_toTopOf="parent"
@@ -484,8 +497,8 @@
 
         <Button
             android:id="@+id/ButtonbracO"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/string_bracket_open"
             android:textSize="26sp"
@@ -501,8 +514,8 @@
 
         <Button
             android:id="@+id/ButtonbracC"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/bracket_Close"
             android:textSize="26sp"
@@ -517,8 +530,8 @@
 
         <Button
             android:id="@+id/Buttondec"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/dot"
             android:textSize="26sp"
@@ -531,14 +544,13 @@
 
         /* Button Advanced Options */
 
-        <ToggleButton
-            android:id="@+id/adv"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+        <Button
+            android:id="@+id/ac"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:textAllCaps="false"
-            android:textOff="@string/adv"
-            android:textOn="@string/norm"
+            android:text="@string/AC"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/ButtonAdd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -552,8 +564,8 @@
 
         <Button
             android:id="@+id/result"
-            android:layout_width="75sp"
-            android:layout_height="75sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:background="@drawable/rounded_corner"
             android:text="@string/equals"
             android:textSize="26sp"
@@ -562,6 +574,7 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toEndOf="@+id/Button0"
             app:layout_constraintTop_toBottomOf="@+id/Button3"
+            tools:ignore="TextContrastCheck"
             tools:targetApi="p" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

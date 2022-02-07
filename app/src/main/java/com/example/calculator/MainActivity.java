@@ -120,28 +120,16 @@ public class MainActivity extends AppCompatActivity {
         final Button result = findViewById(R.id.result);
         final Button fact = findViewById(R.id.fact);
         final ToggleButton invert = findViewById(R.id.invert_button);
-        final ToggleButton adv = findViewById(R.id.adv);
+        final Button ac = findViewById(R.id.ac);
         curIn = findViewById(R.id.curIn);
 
         curIn.setShowSoftInputOnFocus(false);
         curIn.setText("");
 
-        adv.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        ac.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                adv_option = isChecked;
-                Animation slide_down = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.to_orig_place);
-                Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
-                        R.anim.to_set_place);
-                if(adv_option){
-                    Advance_Layout.startAnimation(slide_up);
-                    Advance_Layout.setVisibility(View.VISIBLE);
-                }
-                else{
-                    Advance_Layout.startAnimation(slide_down);
-                    Advance_Layout.setVisibility(View.INVISIBLE);
-                }
+            public void onClick(View view) {
+                curIn.setText("");
             }
         });
 
