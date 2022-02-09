@@ -36,5 +36,7 @@
     <string name="tan_inv" translatable="false">atan</string>
     <string name="adv" translatable="false">adv</string>
     <string name="norm" translatable="false">norm</string>
-    <string name="AC">AC</string>
+    <string name="AC" translatable="false">AC</string>
+    <string name="history">History</string>
+    <string name="back">Back</string>
 </resources>
