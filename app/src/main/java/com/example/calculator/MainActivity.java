@@ -3,13 +3,18 @@ package com.example.calculator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -114,10 +119,41 @@ public class MainActivity extends AppCompatActivity {
         final Button fact = findViewById(R.id.fact);
         final ToggleButton invert = findViewById(R.id.invert_button);
         final Button ac = findViewById(R.id.ac);
+        final Button history = findViewById(R.id.history);
+        final Button back = findViewById(R.id.back);
+        final TextView historyView = findViewById(R.id.HistoryView);
+
+        final ConstraintLayout layout_history = findViewById(R.id.history_layout);
+        final ConstraintLayout simple_calc = findViewById(R.id.Simple_Calc_Layout);
+        final ConstraintLayout adv_calc = findViewById(R.id.Advance_Function_Layout);
         curIn = findViewById(R.id.curIn);
 
+        historyView.setMovementMethod(new ScrollingMovementMethod());
         curIn.setShowSoftInputOnFocus(false);
         curIn.setText("");
+
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                layout_history.setVisibility(View.VISIBLE);
+                history.setVisibility(View.INVISIBLE);
+                curIn.setVisibility(View.INVISIBLE);
+                simple_calc.setVisibility(View.INVISIBLE);
+                adv_calc.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                layout_history.setVisibility(View.INVISIBLE);
+                history.setVisibility(View.VISIBLE);
+                curIn.setVisibility(View.VISIBLE);
+                simple_calc.setVisibility(View.VISIBLE);
+                adv_calc.setVisibility(View.VISIBLE);
+            }
+        });
 
         ac.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -460,6 +496,7 @@ public class MainActivity extends AppCompatActivity {
                     else
                         answer = ans;
                     curIn.setText(answer);
+                    historyView.append(CalcIn3+"\n"+answer+"\n\n");
                 } catch (Exception e) {
                 }
                 curIn.setSelection(curIn.length());
