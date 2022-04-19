@@ -484,11 +484,11 @@
 
         /* Button Add */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonAdd"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/Add"
             android:textSize="26sp"
             android:layout_marginBottom="3dp"
@@ -501,11 +501,11 @@
 
         /* Button Substract */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonSub"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/substract"
             android:textSize="26sp"
             android:layout_marginBottom="3dp"
@@ -519,11 +519,11 @@
 
         /* Button Multiply */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonMul"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/multiply"
             android:textSize="26sp"
             android:layout_marginBottom="3dp"
@@ -536,11 +536,11 @@
 
         /* Button Divide */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonDiv"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/division"
             android:textSize="26sp"
             android:layout_marginBottom="3dp"
@@ -555,11 +555,11 @@
 
         /* Button Open Bracket */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/delete"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/del"
             android:textAllCaps="false"
             android:textSize="26sp"
@@ -571,11 +571,11 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:targetApi="p" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonbracO"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/string_bracket_open"
             android:textSize="26sp"
             android:layout_marginBottom="3dp"
@@ -589,11 +589,11 @@
 
         /* Button Close Bracket */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonbracC"
             android:layout_width="80sp"
             android:layout_height="80sp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/special_button"
             android:text="@string/bracket_Close"
             android:textSize="26sp"
             android:layout_marginBottom="3dp"
@@ -623,12 +623,12 @@
 
         /* Button Advanced Options */
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ac"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="80sp"
             android:layout_height="80sp"
             android:layout_marginBottom="3dp"
+            android:textAppearance="@drawable/text_button"
             android:background="@drawable/ac_button"
             android:text="@string/AC"
             android:textAllCaps="false"

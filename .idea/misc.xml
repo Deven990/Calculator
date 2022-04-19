@@ -5,12 +5,21 @@
       <map>
         <entry key="app/src/main/res/drawable-night-v31/ac_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night-v31/rounded_corner.xml" value="0.1935" />
+        <entry key="app/src/main/res/drawable-night-v31/special_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-night-v31/text_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-night-v32/ac_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night/ac_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night/rounded_corner.xml" value="0.1935" />
+        <entry key="app/src/main/res/drawable-night/special_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-night/text_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-v31/ac_button.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable-v31/rounded_corner.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v31/special_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-v31/text_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ac_button.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.13" />
+        <entry key="app/src/main/res/drawable/special_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable/text_button.xml" value="0.12" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
       </map>
