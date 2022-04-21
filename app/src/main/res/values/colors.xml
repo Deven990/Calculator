@@ -6,4 +6,6 @@
     <color name="Black_v2">#333333</color>
     <color name="Blue_Light">#03a9f4</color>
     <color name="Blue_Dark">#1976d2</color>
+    <color name="icon_bg_color">#3DDC84</color>
+    <color name="icon_fg_color">#FFFFFF</color>
 </resources>
