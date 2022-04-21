@@ -1,15 +1,19 @@
 package com.example.calculator;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     boolean lang_flag;
     String[] splitText = new String[3];
     int cursorPos;
+    private TextView historyView;
 
     private final Function[] myFunctions = {
             new Function("sin") {
@@ -121,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         final Button ac = findViewById(R.id.ac);
         final Button history = findViewById(R.id.history);
         final Button back = findViewById(R.id.back);
-        final TextView historyView = findViewById(R.id.HistoryView);
+        historyView = findViewById(R.id.HistoryView);
 
         final ConstraintLayout layout_history = findViewById(R.id.history_layout);
         final ConstraintLayout simple_calc = findViewById(R.id.Simple_Calc_Layout);
@@ -140,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
                 curIn.setVisibility(View.INVISIBLE);
                 simple_calc.setVisibility(View.INVISIBLE);
                 adv_calc.setVisibility(View.INVISIBLE);
-
             }
         });
 
@@ -446,7 +450,8 @@ public class MainActivity extends AppCompatActivity {
                         expression = new ExpressionBuilder(CalcIn2).operator(factorial).functions(myFunctions).build();
                     else
                         expression = new ExpressionBuilder(CalcIn2).operator(factorial).build();
-                    String ans = String.format("%.5f",expression.evaluate());
+                    String ans = String.format("%.3f",expression.evaluate());
+                    expression=null;
                     String answer="";
                     while(true) {
                         if (ans.endsWith("0") && !ans.endsWith(".0"))
@@ -498,6 +503,7 @@ public class MainActivity extends AppCompatActivity {
                     curIn.setText(answer);
                     historyView.append(CalcIn3+"\n"+answer+"\n\n");
                 } catch (Exception e) {
+                   Toast.makeText(getApplicationContext(),"Invalid Expression", Toast.LENGTH_SHORT).show();
                 }
                 curIn.setSelection(curIn.length());
             }
@@ -537,6 +543,23 @@ public class MainActivity extends AppCompatActivity {
         splitText[0] = curIn.getText().subSequence(0, cursorPos).toString();
         splitText[1] = curIn.getText().subSequence(cursorPos, curIn.length()).toString();
         return splitText;
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Calculations", MODE_PRIVATE);
+        historyView.setText("");
+        historyView.setText(settings.getString("Calc",""));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences settings = getSharedPreferences("Calculations", MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Calc",historyView.getText().toString());
+        editor.commit();
     }
 
 }

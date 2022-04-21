@@ -6,13 +6,13 @@
         <item name="colorPrimary">@android:color/system_neutral2_100</item>
         <item name="colorPrimaryVariant">@color/White</item>
         <item name="colorOnPrimary">@color/Black</item>
-        <item name="android:background">@color/White</item>
+        <item name="android:background">@android:color/system_neutral1_50</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/White</item>
         <item name="colorSecondaryVariant">@color/White</item>
         <item name="colorOnSecondary">@color/White</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="s">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="s">@android:color/system_neutral1_50</item>
         <item name="android:windowLightStatusBar">true</item>
         <!-- Navigation bar color. -->
         <item name="android:windowLightNavigationBar">true</item>
