@@ -1,17 +1,15 @@
 package com.example.calculator;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -75,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
     private EditText curIn;
-    private TextView historyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,34 +110,18 @@ public class MainActivity extends AppCompatActivity {
         final ToggleButton invert = findViewById(R.id.invert_button);
         final Button ac = findViewById(R.id.ac);
         final Button history = findViewById(R.id.history);
-        final Button back = findViewById(R.id.back);
-        final Button clear = findViewById(R.id.clear);
-        historyView = findViewById(R.id.HistoryView);
 
-        final ConstraintLayout layout_history = findViewById(R.id.history_layout);
-        final ConstraintLayout simple_calc = findViewById(R.id.Simple_Calc_Layout);
-        final ConstraintLayout adv_calc = findViewById(R.id.Advance_Function_Layout);
         curIn = findViewById(R.id.curIn);
 
-        historyView.setMovementMethod(new ScrollingMovementMethod());
         curIn.setShowSoftInputOnFocus(false);
         curIn.setText("");
 
-        clear.setOnClickListener(view -> historyView.setText(""));
         history.setOnClickListener(view -> {
-            layout_history.setVisibility(View.VISIBLE);
-            history.setVisibility(View.INVISIBLE);
-            curIn.setVisibility(View.INVISIBLE);
-            simple_calc.setVisibility(View.INVISIBLE);
-            adv_calc.setVisibility(View.INVISIBLE);
-        });
-
-        back.setOnClickListener(view -> {
-            layout_history.setVisibility(View.INVISIBLE);
-            history.setVisibility(View.VISIBLE);
-            curIn.setVisibility(View.VISIBLE);
-            simple_calc.setVisibility(View.VISIBLE);
-            adv_calc.setVisibility(View.VISIBLE);
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            Fragment fragment = new History_page();
+            transaction.replace(R.id.constraintLayout, fragment, null);
+            transaction.addToBackStack(null);
+            transaction.commit();
         });
 
         ac.setOnClickListener(view -> curIn.setText(""));
@@ -418,7 +399,10 @@ public class MainActivity extends AppCompatActivity {
                 } else
                     answer = ans;
                 curIn.setText(answer);
-                historyView.setText(CalcIn3 + "\n" + answer + "\n\n" + historyView.getText());
+                SharedPreferences settings = getSharedPreferences("Calculations", MODE_PRIVATE);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("Calc", CalcIn3 + "\n" + answer + "\n\n" + settings.getString("Calc", ""));
+                editor.apply();
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Invalid Expression", Toast.LENGTH_SHORT).show();
             }
@@ -428,15 +412,15 @@ public class MainActivity extends AppCompatActivity {
         delete.setOnClickListener(view -> {
             CalcIn2 = curIn.getText().toString();
 
-                if (!CalcIn2.isEmpty()) {
-                    splitText = splitStrings();
-                    int len = splitText[0].length() - 1;
-                    splitText[2] = splitText[0].substring(0, len);
-                    CalcIn2 = splitText[2] + splitText[1];
-                    cursorPos = splitText[2].length();
-                    curIn.setText(CalcIn2);
-                    curIn.setSelection(cursorPos);
-                }
+            if (!CalcIn2.isEmpty()) {
+                splitText = splitStrings();
+                int len = splitText[0].length() - 1;
+                splitText[2] = splitText[0].substring(0, len);
+                CalcIn2 = splitText[2] + splitText[1];
+                cursorPos = splitText[2].length();
+                curIn.setText(CalcIn2);
+                curIn.setSelection(cursorPos);
+            }
         });
 
         delete.setOnLongClickListener(v -> {
@@ -446,28 +430,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String[] splitStrings(){
+    private String[] splitStrings() {
         cursorPos = curIn.getSelectionEnd();
         splitText[0] = curIn.getText().subSequence(0, cursorPos).toString();
         splitText[1] = curIn.getText().subSequence(cursorPos, curIn.length()).toString();
         return splitText;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        SharedPreferences settings = getSharedPreferences("Calculations", MODE_PRIVATE);
-        historyView.setText("");
-        historyView.setText(settings.getString("Calc", ""));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        SharedPreferences settings = getSharedPreferences("Calculations", MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("Calc", historyView.getText().toString());
-        editor.apply();
-    }
 
 }

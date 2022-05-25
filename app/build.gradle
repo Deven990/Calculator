@@ -1,20 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('/home/dev/my-release-key.keystore')
-            storePassword 'Dev990@!'
-            keyAlias 'dev'
-            keyPassword 'Dev990@!'
-        }
-        release {
-            storeFile file('/home/dev/my-release-key.keystore')
-            storePassword 'Dev990@!'
-            keyAlias 'dev'
-            keyPassword 'Dev990@!'
-        }
-    }
     compileSdkVersion 32
     buildToolsVersion '30.0.3'
 

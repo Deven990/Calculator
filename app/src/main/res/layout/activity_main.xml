@@ -10,102 +10,52 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/history_layout"
-        android:visibility="invisible"
-        android:elevation="2dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="11dp"
-            android:background="@drawable/rounded_corner"
-            android:text="@string/back"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage"
-            tools:targetApi="p" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="11dp"
-            android:background="@drawable/rounded_corner"
-            android:text="@string/clear"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpUsage"
-            tools:targetApi="p" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/HistoryView"
-            android:textAlignment="textEnd"
-            android:textSize="42sp"
-            android:scrollbars="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/back"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_alignParentBottom="true"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
     /* Display Output */
 
     /* GuideLines */
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/rounded_corner"
-        android:text="@string/history"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
-        app:layout_constraintTop_toBottomOf="@id/topGuideline"
-        android:layout_marginTop="10dp"
-        tools:ignore="SpUsage"
-        tools:layout_editor_absoluteY="-2dp"
-        tools:targetApi="p" />
-
-    <EditText
-        android:id="@+id/curIn"
-        android:layout_width="357dp"
-        android:layout_height="82dp"
-        android:autofillHints=""
-        android:background="@null"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/centerGuideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/Simple_Calc_Layout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+        android:background="@drawable/rounded_corner" >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_corner"
+            android:text="@string/history"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            tools:ignore="SpUsage"
+            />
+
+        <EditText
+            android:id="@+id/curIn"
+            android:layout_width="357dp"
+            android:layout_height="82dp"
+            android:autofillHints=""
+            android:background="@null"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="48sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/history"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.634"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuideline"
@@ -139,12 +89,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Advance_Function_Layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"
+        android:background="@drawable/round_corner"
         app:layout_constraintBottom_toTopOf="@id/Simple_Calc_Layout"
-        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
-        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/centerGuideline"
         app:layout_constraintVertical_chainStyle="packed">
 
@@ -153,6 +104,7 @@
             android:layout_height="match_parent"
             android:columnCount="5"
             android:rowCount="2"
+            android:background="@drawable/round_corner"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
