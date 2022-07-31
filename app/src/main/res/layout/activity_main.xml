@@ -19,40 +19,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
+        android:background="@drawable/rounded_corner"
         app:layout_constraintBottom_toBottomOf="@id/Simple_Calc_Layout"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/rounded_corner" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/rounded_corner"
             android:text="@string/history"
             android:textAllCaps="false"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            tools:ignore="SpUsage"
-            />
+            tools:ignore="SpUsage" />
 
         <EditText
             android:id="@+id/curIn"
             android:layout_width="357dp"
             android:layout_height="82dp"
+            android:layout_marginTop="5dp"
             android:autofillHints=""
             android:background="@null"
             android:inputType="text"
             android:textAlignment="center"
             android:textSize="48sp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/history"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/history"
             app:layout_constraintVertical_bias="0.634"
             tools:ignore="LabelFor,SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -91,8 +90,8 @@
         android:id="@+id/Advance_Function_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
         android:background="@drawable/round_corner"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/Simple_Calc_Layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,9 +101,9 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@drawable/round_corner"
             android:columnCount="5"
             android:rowCount="2"
-            android:background="@drawable/round_corner"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -283,12 +282,13 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button1"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_1"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Buttondec"
             app:layout_constraintEnd_toStartOf="@+id/Button2"
             app:layout_constraintHorizontal_bias="1"
@@ -300,12 +300,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button2"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_2"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button0"
             app:layout_constraintEnd_toStartOf="@+id/Button3"
             app:layout_constraintHorizontal_bias="1"
@@ -317,12 +320,14 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button3"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_3"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/result"
             app:layout_constraintEnd_toStartOf="@+id/ButtonSub"
             app:layout_constraintHorizontal_bias="1"
@@ -334,12 +339,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button4"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_4"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button1"
             app:layout_constraintEnd_toStartOf="@+id/Button5"
             app:layout_constraintHorizontal_bias="1"
@@ -351,12 +359,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button5"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_5"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button2"
             app:layout_constraintEnd_toStartOf="@+id/Button6"
             app:layout_constraintHorizontal_bias="1"
@@ -368,12 +379,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button6"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_6"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button3"
             app:layout_constraintEnd_toStartOf="@+id/ButtonMul"
             app:layout_constraintHorizontal_bias="1"
@@ -385,12 +399,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button7"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_7"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button4"
             app:layout_constraintEnd_toStartOf="@+id/Button8"
             app:layout_constraintHorizontal_bias="1"
@@ -402,12 +419,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button8"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_8"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button5"
             app:layout_constraintEnd_toStartOf="@+id/Button9"
             app:layout_constraintHorizontal_bias="1"
@@ -421,12 +441,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button9"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_9"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button6"
             app:layout_constraintEnd_toStartOf="@+id/ButtonAdd"
             app:layout_constraintHorizontal_bias="1"
@@ -436,12 +459,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Button0"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/_0"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/result"
             app:layout_constraintHorizontal_bias="1"
@@ -455,12 +481,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonAdd"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/Add"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/ButtonMul"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
@@ -472,12 +501,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonSub"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/substract"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/ButtonDiv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
@@ -490,12 +522,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonMul"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/multiply"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/ButtonSub"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
@@ -507,12 +542,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonDiv"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/division"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"
@@ -526,13 +564,14 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/delete"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/del"
             android:textAllCaps="false"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button9"
             app:layout_constraintEnd_toStartOf="@+id/ac"
             app:layout_constraintHorizontal_bias="1"
@@ -542,12 +581,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonbracO"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/string_bracket_open"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button7"
             app:layout_constraintEnd_toStartOf="@+id/ButtonbracC"
             app:layout_constraintHorizontal_bias="1"
@@ -560,12 +602,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ButtonbracC"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/special_button"
             android:text="@string/bracket_Close"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/Button8"
             app:layout_constraintEnd_toStartOf="@+id/delete"
             app:layout_constraintHorizontal_bias="1"
@@ -577,12 +622,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Buttondec"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/dot"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Button0"
             app:layout_constraintHorizontal_bias="1"
@@ -594,13 +642,14 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ac"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
             android:layout_marginBottom="5dp"
-            android:textAppearance="@drawable/text_button"
+            android:layout_weight="1"
             android:background="@drawable/ac_button"
             android:text="@string/AC"
             android:textAllCaps="false"
+            android:textAppearance="@drawable/text_button"
             android:textSize="26sp"
             app:layout_constraintBottom_toTopOf="@+id/ButtonAdd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -614,12 +663,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/result"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:layout_marginBottom="5dp"
+
+
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner"
             android:text="@string/equals"
             android:textSize="26sp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/ButtonDiv"
             app:layout_constraintHorizontal_bias="1"

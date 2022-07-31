@@ -2,8 +2,11 @@
 <resources>
     <color name="White">#ffffff</color>
     <color name="White_v2">#aaaaaa</color>
+    <color name="White_v3">#dddddd</color>
+    <color name="White_v4">#cccccc</color>
     <color name="Black">#000000</color>
     <color name="Black_v2">#333333</color>
+    <color name="Black_v3">#111111</color>
     <color name="Blue_Light">#03a9f4</color>
     <color name="Blue_Dark">#1976d2</color>
     <color name="icon_bg_color">#3DDC84</color>

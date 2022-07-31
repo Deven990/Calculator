@@ -19,33 +19,58 @@
         <entry key="app/src/main/res/drawable-night-v31/ac_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night-v31/ic_launcher_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night-v31/ic_launcher_foreground.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-night-v31/ic_launcher_foreground_themed.xml" value="0.212" />
         <entry key="app/src/main/res/drawable-night-v31/ic_luancher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-night-v31/round_corner_v2.xml" value="0.212" />
         <entry key="app/src/main/res/drawable-night-v31/rounded_corner.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable-night-v31/special_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night-v31/text_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night-v32/ac_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night/ac_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-night/ic_launcher_background_themed.xml" value="0.212" />
         <entry key="app/src/main/res/drawable-night/ic_launcher_foreground.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-night/ic_launcher_foreground_themed.xml" value="0.212" />
+        <entry key="app/src/main/res/drawable-night/round_corner.xml" value="0.212" />
+        <entry key="app/src/main/res/drawable-night/round_corner_v2.xml" value="0.212" />
         <entry key="app/src/main/res/drawable-night/rounded_corner.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable-night/special_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-night/text_button.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-notnight-v31/ic_launcher_background_themed.xml" value="0.212" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable-v31/ac_button.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable-v31/ic_launcher_background.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-v31/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v31/round_corner.xml" value="0.212" />
+        <entry key="app/src/main/res/drawable-v31/round_corner_v2.xml" value="0.212" />
         <entry key="app/src/main/res/drawable-v31/rounded_corner.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v31/special_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable-v31/text_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ac_button.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/ic_launcher.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background_themed.xml" value="0.212" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground_themed.xml" value="0.212" />
         <entry key="app/src/main/res/drawable/monochrome_icon.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_corner.xml" value="0.1125" />
+        <entry key="app/src/main/res/drawable/round_corner_v2.xml" value="0.212" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.13" />
         <entry key="app/src/main/res/drawable/special_button.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/text_button.xml" value="0.12" />
+        <entry key="app/src/main/res/layout-411x731/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-412x732/activity_main.xml" value="0.3572916666666667" />
+        <entry key="app/src/main/res/layout-420dp/activity_main.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout-420dpi-v31/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout-420dpi/activity_main.xml" value="0.20170940170940171" />
+        <entry key="app/src/main/res/layout-hdpi/activity_main.xml" value="0.37109375" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout-v31-420dpi/activity_main.xml" value="0.267840593141798" />
+        <entry key="app/src/main/res/layout-xhdpi/activity_main.xml" value="0.37109375" />
+        <entry key="app/src/main/res/layout-xxhdpi/activity_main.xml" value="0.15526315789473685" />
+        <entry key="app/src/main/res/layout-xxxhdpi/activity_main.xml" value="0.18747522790328974" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.9833333333333333" />
+        <entry key="app/src/main/res/layout/fragment_history_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12" />
       </map>
@@ -56,5 +81,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.15394736842105264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -2,8 +2,14 @@ package com.example.calculator;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.ComponentName;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -74,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     };
     private EditText curIn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,9 +126,20 @@ public class MainActivity extends AppCompatActivity {
         history.setOnClickListener(view -> {
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             Fragment fragment = new History_page();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             transaction.replace(R.id.constraintLayout, fragment, null);
             transaction.addToBackStack(null);
             transaction.commit();
+        });
+        
+        history.setOnLongClickListener(view -> {
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            Fragment fragment = new Settings();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            transaction.replace(R.id.constraintLayout, fragment, null);
+            transaction.addToBackStack(null);
+            transaction.commit();
+            return true;
         });
 
         ac.setOnClickListener(view -> curIn.setText(""));
@@ -437,5 +455,29 @@ public class MainActivity extends AppCompatActivity {
         return splitText;
     }
 
+    protected void default_icon() {
 
+        // enable old icon
+        PackageManager manager=getPackageManager();
+        manager.setComponentEnabledSetting(new ComponentName(MainActivity.this,"com.example.calculator.MainActivity")
+                ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+
+        // disable new icon
+        manager.setComponentEnabledSetting(new ComponentName(MainActivity.this,"com.example.calculator.MainActivityAlias")
+                ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+        Toast.makeText(MainActivity.this,"Default Icon Enabled" ,Toast.LENGTH_LONG).show();
+    }
+
+    protected void themed_icon() {
+
+        // enable old icon
+        PackageManager manager= getPackageManager();
+        manager.setComponentEnabledSetting(new ComponentName(MainActivity.this,"com.example.calculator.MainActivity")
+                ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+
+        // enable new icon
+        manager.setComponentEnabledSetting(new ComponentName(MainActivity.this,"com.example.calculator.MainActivityAlias")
+                ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+        Toast.makeText(MainActivity.this,"Themed Icon Enabled" ,Toast.LENGTH_LONG).show();
+    }
 }

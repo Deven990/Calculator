@@ -3,7 +3,7 @@
     android:color="@color/White_v2">
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
-            <solid android:color="@color/White_v2" />
+            <solid android:color="@color/White_v3" />
             <corners android:radius="25dp" />
         </shape>
     </item>
@@ -12,8 +12,8 @@
         <shape android:shape="rectangle">
             <gradient
                 android:angle="90"
-                android:endColor="@color/Blue_Light"
-                android:startColor="@color/Blue_Dark"
+                android:endColor="@color/White_v3"
+                android:startColor="@color/White_v4"
                 android:type="linear" />
             <corners android:radius="25dp" />
         </shape>

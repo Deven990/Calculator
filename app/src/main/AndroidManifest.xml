@@ -14,15 +14,30 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculatorApp">
-        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden"
-            tools:ignore="Instantiatable" android:exported="true"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity-alias
+            android:name=".MainActivityAlias"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher_themed"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
     </application>
 
 </manifest>

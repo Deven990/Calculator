@@ -73,7 +73,7 @@ public class History_page extends Fragment {
         clear.setOnClickListener(view -> {
             historyView.setText("");
             SharedPreferences.Editor editor = settings.edit();
-            editor.putString("Calc","");
+            editor.putString("Calc", "");
             editor.apply();
         });
         return rootView;
