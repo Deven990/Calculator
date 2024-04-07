@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -117,6 +119,34 @@ public class MainActivity extends AppCompatActivity {
         final ToggleButton invert = findViewById(R.id.invert_button);
         final Button ac = findViewById(R.id.ac);
         final Button history = findViewById(R.id.history);
+        final View simple_Calc_Layout = findViewById(R.id.Simple_Calc_Layout);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        simple_Calc_Layout.setMinimumHeight(height/2);
+        button0.setHeight(height/10);
+        button1.setHeight(height/10);
+        button2.setHeight(height/10);
+        button3.setHeight(height/10);
+        button4.setHeight(height/10);
+        button5.setHeight(height/10);
+        button6.setHeight(height/10);
+        button7.setHeight(height/10);
+        button8.setHeight(height/10);
+        button9.setHeight(height/10);
+        buttonbracC.setHeight(height/10);
+        buttonbracO.setHeight(height/10);
+        buttondec.setHeight(height/10);
+        ac.setHeight(height/10);
+        div.setHeight(height/10);
+        add.setHeight(height/10);
+        sub.setHeight(height/10);
+        mul.setHeight(height/10);
+        result.setHeight(height/10);
+        delete.setHeight(height/10);
 
         curIn = findViewById(R.id.curIn);
 
@@ -446,6 +476,9 @@ public class MainActivity extends AppCompatActivity {
             curIn.setSelection(curIn.length());
             return false;
         });
+
+
+
     }
 
     private String[] splitStrings() {
